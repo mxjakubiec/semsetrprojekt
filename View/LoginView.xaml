@@ -11,16 +11,16 @@
         WindowStartupLocation="CenterScreen"
         Background="Transparent"
         AllowsTransparency="True"
-       >
-    <Border CornerRadius="50">
+        MouseDown="Window_MouseDown">
+    <Border CornerRadius="12">
         <Border.Background>
-            <ImageBrush ImageSource="/images/Sunset (1920x1080) - Wallpaper.webp"
-                        Stretch="UniformToFill"/>
-            
+            <ImageBrush ImageSource="C:\Users\user\source\repos\pj\images\Purple Beach Wallpaper   52DazheW Gallery.jpg"/>
         </Border.Background>
-        <Border CornerRadius="50"
-                Opacity="0.65"
-                BorderThickness="5">
+   
+        
+        <Border CornerRadius="10"
+                Opacity="0.80"
+                BorderThickness="1">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -34,6 +34,42 @@
                     <GradientStop Color="#1B1448" Offset="0.75"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="LOG IN"
+                               Foreground="DarkGray"
+                               FontSize="10"
+                               FontFamily="Montserrat"
+                               Grid.Column="0"
+                               VerticalAlignment="Center"
+                               Margin="10,0,0,0"/>
+
+                    <Button x:Name="btnMinimize"
+                            Background="#28AEED"
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click">
+                        
+                    </Button>
+                </Grid>
+            </Grid>
         </Border>
     </Border>
 </Window>
