@@ -170,14 +170,123 @@
                     <TextBox x:Name="txtUser"
                              FontSize="13"
                              FontWeight="Medium"
-                             FontFamily="Palatino Linotype"
-                             Background="Transparent"
+                             FontFamily="Palatino Linotype" 
                              Foreground="White"
                              CaretBrush="LightGray"
                              BorderBrush="DarkGray"
-                             BorderThickness="0,0,0,2">
+                             BorderThickness="0,0,0,1"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="31,0,0,0">
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="C:\Users\user\source\repos\pj\images\hiclipart.com.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                        
+                        
+                        
                         
                     </TextBox>
+
+                    <TextBlock Text= "Password"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Palatino Linotype"
+                               TextAlignment="Justify"
+                               Margin="0,15,0,0"/>
+
+                    <PasswordBox x:Name="txtPass"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Palatino Linotype" 
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,1"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,4,0,0"
+                             Padding="31,0,0,0">
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="C:\Users\user\source\repos\pj\images\key.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </PasswordBox.Background>
+
+
+
+
+                    </PasswordBox>
+
+                    <Button x:Name="btnLogin"
+                            
+                            BorderThickness="0"
+                            Content="LOG IN"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Palatino Linotype"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,30,0,0"
+                            Click="btnLogin_Click">
+    
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#28AEED"/>
+                                    </Trigger>
+                                </Style.Triggers>
+
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150"
+                                        Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,15,0,0">
+
+                    <TextBlock Text= "Forgot Password"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Palatino Linotype"
+                               
+                               />
+
+                    <TextBlock Text= "Reset"
+                               Foreground="White"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Palatino Linotype"
+                               Cursor="Hand"
+                               Margin="8,0,0,0"/>
+
+                    </StackPanel>
+
+
+
+
+
 
 
                 </StackPanel>
