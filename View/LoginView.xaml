@@ -57,7 +57,7 @@
                                Margin="10,0,0,0"/>
 
                     <Button x:Name="btnMinimize"
-                            Background="#28AEED"
+                            
                             BorderThickness="0"
                             Content="-"
                             Foreground="White"
@@ -66,9 +66,122 @@
                             Cursor="Hand"
                             Grid.Column="1"
                             Click="btnMinimize_Click">
-                        
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18"
+                                        Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                                </Border>
+                                
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+                    <Button x:Name="btnClose"
+                            
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18"
+                                        Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+
+                                </Border>
+
+                            </ControlTemplate>
+                        </Button.Template>
+
                     </Button>
                 </Grid>
+
+                <StackPanel Width="250"
+                            Grid.Row="2"
+                            Orientation="Vertical"
+                            Margin="0,35,0,0">
+
+                    <Image Source="C:\Users\user\source\repos\pj\images\—Pngtree—business logo design free logo_915991.png"
+                           Width="150" Height="150"/>
+
+                    <TextBlock Text="LOTUS"
+                               Foreground="White"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Palatino Linotype"
+                               HorizontalAlignment="Center"/>
+
+                    <TextBlock Text= "Nelumbo nucifera is a lotus species with historical cultural and spiritual significance."
+                               Foreground="LightGray"
+                               FontSize="10"
+                               FontWeight="Light"
+                               FontFamily="Palatino Linotype"
+                               TextAlignment="Center" 
+                               TextWrapping="Wrap"
+                               Margin="0,5,0,0"/>
+
+
+                    <TextBlock Text= "Username"
+                               Foreground="DarkGray"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               FontFamily="Palatino Linotype"
+                               TextAlignment="Justify"
+                               Margin="0,25,0,0"/>
+
+                    <TextBox x:Name="txtUser"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             FontFamily="Palatino Linotype"
+                             Background="Transparent"
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="DarkGray"
+                             BorderThickness="0,0,0,2">
+                        
+                    </TextBox>
+
+
+                </StackPanel>
+                
             </Grid>
         </Border>
     </Border>
