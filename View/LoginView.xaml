@@ -9,8 +9,31 @@
         WindowStyle="None"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
-        MouseDown="Window_MouseDown">
-    <Grid>
-        
-    </Grid>
+        Background="Transparent"
+        AllowsTransparency="True"
+       >
+    <Border CornerRadius="50">
+        <Border.Background>
+            <ImageBrush ImageSource="/images/Sunset (1920x1080) - Wallpaper.webp"
+                        Stretch="UniformToFill"/>
+            
+        </Border.Background>
+        <Border CornerRadius="50"
+                Opacity="0.65"
+                BorderThickness="5">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+    </Border>
 </Window>
