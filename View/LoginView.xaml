@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pj.View"
+        xmlns:viewModel="clr-namespace:pj.ViewModel"
         mc:Ignorable="d"
         Title="LoginView" Height="550" Width="800"
         WindowStyle="None"
@@ -12,6 +13,19 @@
         Background="Transparent"
         AllowsTransparency="True"
         MouseDown="Window_MouseDown">
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolLeanToVisiblility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BoolLeanToVisiblility}"/>
+    </Window.Visibility>
+    
     <Border CornerRadius="12">
         <Border.Background>
             <ImageBrush ImageSource="C:\Users\user\source\repos\pj\images\Purple Beach Wallpaper   52DazheW Gallery.jpg"/>
@@ -168,6 +182,7 @@
                                Margin="0,25,0,0"/>
 
                     <TextBox x:Name="txtUser"
+                             Text="{Binding Username}"
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Palatino Linotype" 
@@ -198,7 +213,7 @@
                                TextAlignment="Justify"
                                Margin="0,15,0,0"/>
 
-                    <PasswordBox x:Name="txtPass"
+                    <PasswordBox x:Name="txtPass"                              
                              FontSize="13"
                              FontWeight="Medium"
                              FontFamily="Palatino Linotype" 
@@ -210,11 +225,7 @@
                              VerticalContentAlignment="Center"
                              Margin="0,4,0,0"
                              Padding="31,0,0,0">
-                        <PasswordBox.Background>
-                            <ImageBrush ImageSource="C:\Users\user\source\repos\pj\images\key.png"
-                                        Stretch="None"
-                                        AlignmentX="Left"/>
-                        </PasswordBox.Background>
+                       
 
 
 
