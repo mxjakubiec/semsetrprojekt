@@ -100,7 +100,7 @@ namespace pj.ViewModel
 
         private void ExexuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
