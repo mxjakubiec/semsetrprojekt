@@ -1,8 +1,13 @@
-﻿using System;
+﻿using pj.Model;
+using pj.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Security;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -15,6 +20,8 @@ namespace pj.ViewModel
         private SecureString _password;
         private string _errorMessage;
         private bool _isViewVisible = true;
+
+        private IUserRepository userRepository;
 
         //Properties
         public string Username
@@ -79,6 +86,7 @@ namespace pj.ViewModel
         //Konstruktor
         public LoginViewModel()
         {
+            userRepository = new UserRepositories();
             LoginCommand = new ViewModelComand(ExexuteLoginCommand, CanExecuteLoginCommand);
             RecoverPasswordCommand = new ViewModelComand(p => ExecuteRecoverPassCommand("",""));
         }
@@ -100,6 +108,17 @@ namespace pj.ViewModel
 
         private void ExexuteLoginCommand(object obj)
         {
+            var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Username, Password));
+            if (isValidUser)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(
+                    new GenericIdentity(Username), null);
+                IsViewVisible = false;
+            }
+            else
+            {
+                ErrorMessage = "* Invalid username or password";
+            }
             
         }
     }

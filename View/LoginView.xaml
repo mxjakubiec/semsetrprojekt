@@ -220,6 +220,8 @@
                     </customcontrols:BindablePasswordBox>
 
 
+
+
                     <TextBlock Text= "{Binding ErrorMessage}"
                                Foreground="#D7596D"
                                FontSize="12"

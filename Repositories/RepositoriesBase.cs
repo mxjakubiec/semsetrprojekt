@@ -12,7 +12,7 @@ namespace pj.Repositories
         private readonly string _connectionString;
         public RepositoriesBase()
         {
-            _connectionString = "Server(local); Database=sqlpk1; Integrated Security=true";
+            _connectionString = "Server(local); Database=master; Integrated Security=true";
         }
         protected SqlConnection GetConnection()
         {
